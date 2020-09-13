@@ -77,7 +77,7 @@ namespace SimpleCalculator
                 }
                 try
                 {
-                    num = Convert.ToInt32(Console.ReadLine());
+                    num = Convert.ToDecimal(Console.ReadLine());
                 }
                 catch (Exception)
                 {
