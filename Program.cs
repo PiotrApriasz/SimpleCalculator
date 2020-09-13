@@ -8,7 +8,7 @@ namespace SimpleCalculator
         {
             while (true)
             {
-                int num1 = 0; int num2 = 0;
+                decimal num1 = 0; decimal num2 = 0;
                 char again = 'x';
 
                 Console.Clear();
@@ -66,9 +66,9 @@ namespace SimpleCalculator
             }
         }
 
-        static int NumbersCheck()
+        static decimal NumbersCheck()
         {
-            Nullable<int> num = null;
+            Nullable<decimal> num = null;
             while (true)
             {
                 if (num != null)
@@ -86,7 +86,7 @@ namespace SimpleCalculator
                     num = null;
                 }
             }
-            return (int)num;
+            return (decimal)num;
         }
     }
 }
