@@ -8,8 +8,8 @@ namespace SimpleCalculator
         {
             while (true)
             {
-                decimal num1 = 0; decimal num2 = 0;
-                char again = 'x';
+                decimal num1; decimal num2;
+                char again;
 
                 Console.Clear();
 
@@ -36,6 +36,12 @@ namespace SimpleCalculator
                         Console.WriteLine($"Your result: {num1} * {num2} = " + (num1 * num2));
                         break;
                     case "/":
+                        while (num2 == 0)
+                        {
+                            Console.Write("Enter a non-zero divisor: ");
+                            num2 = NumbersCheck();
+                            Console.WriteLine();
+                        }
                         Console.WriteLine($"Your result: {num1} / {num2} = " + (num1 / num2));
                         break;
                     case "%":
