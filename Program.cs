@@ -6,16 +6,64 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
-            int num1 = 0; int num2 = 0;
+            while (true)
+            {
+                int num1 = 0; int num2 = 0;
+                char again = 'x';
 
-            Console.WriteLine("Simple Console Calculator in C#\r");
-            Console.WriteLine("-------------------------------\n");
+                Console.Clear();
 
-            Console.Write("Enter first number: ");
-            num1 = NumbersCheck();
+                Console.WriteLine("Simple Console Calculator in C#\r");
+                Console.WriteLine("-------------------------------\n");
 
-            Console.Write("Enter second number: ");
-            num2 = NumbersCheck();
+                Console.Write("Enter first number: ");
+                num1 = NumbersCheck();
+
+                Console.Write("\nEnter second number: ");
+                num2 = NumbersCheck();
+
+                Console.Write("\nEnter symbol for math operation. Allowed: '+', '-', '*', '/', '%': ");
+
+                switch (Console.ReadLine())
+                {
+                    case "+":
+                        Console.WriteLine($"Your result: {num1} + {num2} = " + (num1 + num2));
+                        break;
+                    case "-":
+                        Console.WriteLine($"Your result: {num1} - {num2} = " + (num1 - num2));
+                        break;
+                    case "*":
+                        Console.WriteLine($"Your result: {num1} * {num2} = " + (num1 * num2));
+                        break;
+                    case "/":
+                        Console.WriteLine($"Your result: {num1} / {num2} = " + (num1 / num2));
+                        break;
+                    case "%":
+                        Console.WriteLine($"Your result: {num1} % {num2} = " + (num1 % num2));
+                        break;
+                    default:
+                        Console.WriteLine("Incorrect input");
+                        break;
+                }
+
+                while (true)
+                {
+                    Console.Write("\nDo you want to try again? [Y/n]: ");
+                    again = Convert.ToChar(Console.ReadLine());
+
+                    if (Char.ToUpper(again) == 'Y' || Char.ToLower(again) == 'n')
+                    {
+                        break;
+                    }
+
+                    Console.WriteLine("Incorrect data");
+                }
+                if (Char.ToLower(again) == 'n')
+                {
+                    Console.WriteLine("\nThank you! Goodbye");
+                    break;
+                }
+            }
         }
 
         static int NumbersCheck()
