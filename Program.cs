@@ -9,7 +9,7 @@ namespace SimpleCalculator
             while (true)
             {
                 decimal num1; decimal num2;
-                char again;
+                string again;
 
                 Console.Clear();
 
@@ -55,16 +55,16 @@ namespace SimpleCalculator
                 while (true)
                 {
                     Console.Write("\nDo you want to try again? [Y/n]: ");
-                    again = Convert.ToChar(Console.ReadLine());
+                    again = Console.ReadLine();
 
-                    if (Char.ToUpper(again) == 'Y' || Char.ToLower(again) == 'n')
+                    if (again.ToUpper() == "Y" || again.ToLower() == "n")
                     {
                         break;
                     }
 
                     Console.WriteLine("Incorrect data");
                 }
-                if (Char.ToLower(again) == 'n')
+                if (again.ToLower() == "n")
                 {
                     Console.WriteLine("\nThank you! Goodbye");
                     break;
